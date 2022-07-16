@@ -1,0 +1,43 @@
+{% include 'header.html'%}
+
+{% with msg= get_flashed_messages() %} <!--llego con los msjs del objeto flash, agarro ese msj y lo muestro con este diseño de bootstrap que creee-->
+{% if msg %} <!--si mi msg contiene algo, es decir, si se llego a la parte de flash de la validacion-->
+    <div class="alert alert-danger" role="alert">
+        {% for m in msg %}
+            {{m}}
+        {% endfor %}
+    </div>
+{% endif %}
+{% endwith %}
+
+<div class="card">
+    <div class="card-header">
+        agregar pelicula
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">datos de la pelicula</h5>
+        <p class="card-text">
+            <form method="post" action="/store" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="txtnombre">Nombre: </label>
+                    <input id="txtnombre" class="form-control" type="text" name="txtnombre">
+                </div>
+                <div class="form-group">
+                    <label for="txtdesc"> Descripcion: </label>
+                    <input id="txtdesc" class="form-control" type="text" name="txtdesc">
+                </div>
+                <div class="form-group">
+                    <label for="txtimagen"> Imagen: </label>
+                    <input id="txtimagen" class="form-control" type="file" name="txtimagen">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="agregar">
+                    <a href="{{url_for('index')}}" class="btn btn-info"> Volver </a>
+                </div>
+           </form>
+        </p>
+    </div>
+</div>
+{% include 'footer.html'%}
+<!--con el action="" lo que hago es decirle que cada vez q presione el boton submit, se diriga a /store-->

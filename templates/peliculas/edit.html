@@ -1,0 +1,27 @@
+{% include 'header.html'%}
+form para editar el contenido de pelis
+<!--{{peli[0]}} --traigo el id-->
+<!--{{peli[1]}} traigo el nombre-->
+<!--{{peli[2]}} traigo el desc-->
+<!--{{peli[3]}} traigo el imagen-->
+<!--no usa el jfor porq no estamos hablando de una lista, hablamos de solo un elemento-->
+<!--lo que hago es en vez de mostrar los datos sin estructura, los coloco en un formulario(les inserto con value su valor predeterminado)-->
+<form method="post" action="/update" enctype="multipart/form-data">
+    ID:
+    <input type="text" value="{{peli[0]}}"  name="txtID" id="txtID">
+    <br>
+    Nombre:
+    <input type="text" value="{{peli[1]}}"  name="txtnombre" id="txtnombre">
+    <br>
+    Descripcion:
+    <input type="text" value="{{peli[2]}}" name="txtdesc" id="txtdesc">
+    <br>
+    Imagen:
+    <img class="img-thumbnail"  width="100"  src="{{url_for('uploads', nombreimg=peli[3])}}" alt="">
+             <!--como src le paso el url donde esta ESA imagen que quiero mostrar-->
+    <input type="file" name="txtimagen" id="txtimagen">
+    <br>
+    <br>
+    <input type="submit" value="Actualizar">
+</form>
+{% include 'footer.html'%}

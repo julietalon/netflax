@@ -1,0 +1,26 @@
+{% include 'header.html'%}
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>nombre</th>
+                <th>desc</th>
+                <th>imagen</th>
+                <th>acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for peli in pelis %} <!--cada valor de pelis queda guardado en peli-->
+            <tr>
+                <td>{{peli[0]}}</td> <!--de la peli quiero la primer columna, el primer campo-->
+                <td>{{peli[1]}}</td>
+                <td>{{peli[2]}}</td>
+                <!-- copio el dato que necesito-->
+                <td><img src="uploads/{{peli[3]}}" alt="" width="100"  class="img-thumbnail"></td> <!--utilizo una clase de bootstrap para mostrar la imagen pequeña-->
+                <!--<td>{{peli[3]}}</td>-->
+                <td><a class="btn btn-warning" href="/edit.html/{{peli[0]}}">editar</a><a  class="btn btn-danger" onclick="return confirm ('¿desea eliminar el registro?')" href="/destroy/{{peli[0]}}">borrar</a></td>
+           </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% include 'footer.html'%} <!-- tuve que colocar el footer.html y el header.html a fuera en templates para que sea comun, raiz para los archivos, sino tendria que haber colocado peliculas/footer.html para que se diriga hacia ese archivo-->
