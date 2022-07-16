@@ -7,7 +7,7 @@ from datetime import datetime #para que las imagenes no se me repitan, coloco es
 import os #lo necesito para poder realizar la modificacion de mi imagen, asi logrando que la anterior imagen se elimine y se mantenga solo la nueva
 from flask import send_from_directory #para que pueda acceder a la carpeta y mostrarse la imagen
 
-app = Flask (__name__) #instancia, app = variable
+app = Flask (__name__) #instancio, app = variable y app va a ser el nombre por eso entre parentesis de flask coloco (__name__)
 
 app.secret_key = 'Clave' #para que mi cont viaje encriptado, no viaje libre
 
