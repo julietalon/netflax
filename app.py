@@ -27,7 +27,7 @@ app.config['CARPETA'] = CARPETA #parametros de config de nuestra app
 def uploads(nombreimg):
     return send_from_directory(app.config['CARPETA'], nombreimg) #asi accedemos a la carpeta desde la web
 
-@app.route('/') #decorador, para mostrar como va a acceder a mi app
+@app.route('/') #decorador, para mostrar como va a acceder a mi app, define una ruta de acceso para mi servidor
 def index(): #metodo index, lo utilice solamente para verificar que la conexion este correcta
     sql= "SELECT * FROM netflax.peliculas;" #select
     conn = mysql.connect() #conexion con mi base de datos
