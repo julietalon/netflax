@@ -46,8 +46,6 @@ def store():
     _nombre =request.form['txtnombre']
     _desc= request.form['txtdesc']
     _foto= request.files['txtimagen']
-
-
     if _nombre == '' or _desc == '' or _foto == '':
         flash("faltan datos obligatorios!")
         return redirect (url_for ('create'))
@@ -119,8 +117,6 @@ def update():
                                #actualizo los datos
     conn.commit() #grabo la transaccion
     return redirect ('/')
-
-
 
 # http://127.0.0.1:5000/
 if __name__ == '__main__': #ejecuta solo si ejecutamos desde este modulo, evita cuando importe que se ejecute lo de abajo

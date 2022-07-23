@@ -18,7 +18,7 @@
                 <!-- copio el dato que necesito-->
                 <td><img src="uploads/{{peli[3]}}" alt="" width="100"  class="img-thumbnail"></td> <!--utilizo una clase de bootstrap para mostrar la imagen pequeña-->
                 <!--<td>{{peli[3]}}</td>-->
-                <td><a class="btn btn-warning" href="/edit.html/{{peli[0]}}">editar</a><a  class="btn btn-danger" onclick="return confirm ('¿desea eliminar el registro?')" href="/destroy/{{peli[0]}}">borrar</a></td>
+                <td><a class="btn btn-warning" href="/edit.html/{{peli[0]}}">editar</a> <a class="btn btn-danger" onclick="return confirm ('¿desea eliminar el registro?')" href="/destroy/{{peli[0]}}">borrar</a></td>
            </tr>
             {% endfor %}
         </tbody>
