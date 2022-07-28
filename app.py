@@ -107,7 +107,7 @@ def update():
     cursor.execute("SELECT imagen FROM netflax.peliculas WHERE id=%s", _ID) #utilizo el id ya que es el parametro que nunca cambia
                                                         #esta accion la hago ANTES de actualizar mis datos
     img = cursor.fetchone() #tomo el nombre de la imagen que tengo (no la nueva). 
-    os.remove(os.path.join(app.config['CARPETA'], img[0])) #elimino la imagen anterior
+    os.remove(os.path.join(app.config['CARPETA'], img[0])) #elimino la imagen anterior, config con la app
     #coloco como variable la accion q se va a ejercer en el sql
     sql= "UPDATE netflax.peliculas SET nombre = %s, descripcion = %s, imagen=%s WHERE id = %s;"
     #segundo, guardo los nuevos datos en varible datos
